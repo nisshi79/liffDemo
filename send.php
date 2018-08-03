@@ -9,10 +9,12 @@ require ('vendor/autoload.php');
 $inputs = filter_input_array(INPUT_POST);
 
 $demoMessage = $inputs['title'].'のお知らせです'."\r\n";
-
+$messageBuf='';
 for($i = 0; $i < min(count($inputs['roles_list']),count($inputs['members_list']));$i++){
-    $demoMessage .= $inputs['roles_list'][$i].'は'.$inputs['members_list'][$i].'の担当です'."\r\n";
+    $messageBuf[$i] .= $inputs['roles_list'][$i].'は'.$inputs['members_list'][$i].'の担当です';
 }
+
+$demoMessage .= implode("\r\n",$messageBuf);
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('BRMhvyv25/1yd8O+annMkM7obJxqM1ofpKNJ4fuZSkJ07H2eecbzaZCdSX/DT1jWI5y2m6dExTvry0dZfEshg83IZdXPK0IsgimkzjY2QXG2ggSYcsXECLgdDyDXmnwo0pi11CKg5stqaphOyc9uJAdB04t89/1O/w1cDnyilFU=');
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => 'a307966aa625d0e1bf90a078ef0af91a']);

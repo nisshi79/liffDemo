@@ -8,7 +8,7 @@
 require ('vendor/autoload.php');
 $inputs = filter_input_array(INPUT_POST);
 
-$demoMessage = $inputs['title'].'のお知らせです'."\r\n";
+$demoMessage = $inputs['title'].'のお知らせです:'."\r\n\r\n";
 $messageBuf[]='';
 for($i = 0; $i < min(count($inputs['roles_list']),count($inputs['members_list']));$i++){
     $messageBuf[$i] .= $inputs['roles_list'][$i].'は'.$inputs['members_list'][$i].'の担当です';

@@ -5,6 +5,7 @@
  * Date: 2018/08/03
  * Time: 3:40
  */
+require ('vendor/autoload.php');
 $inputs = filter_input_array(INPUT_POST);
 
 $demoMessage = $inputs['title'].'のお知らせです'."\r\n";

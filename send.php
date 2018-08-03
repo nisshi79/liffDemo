@@ -10,8 +10,8 @@ $inputs = filter_input_array(INPUT_POST);
 
 $demoMessage = $inputs['title'].'のお知らせです'."\r\n";
 
-for($i = 0; $i < min(count($inputs['roles']),count($inputs['members']));$i++){
-    $demoMessage .= $inputs['roles'][$i].'は'.$inputs['members'][$i].'の担当です'."\r\n";
+for($i = 0; $i < min(count($inputs['roles_list']),count($inputs['members_list']));$i++){
+    $demoMessage .= $inputs['roles_list'][$i].'は'.$inputs['members_list'][$i].'の担当です'."\r\n";
 }
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('BRMhvyv25/1yd8O+annMkM7obJxqM1ofpKNJ4fuZSkJ07H2eecbzaZCdSX/DT1jWI5y2m6dExTvry0dZfEshg83IZdXPK0IsgimkzjY2QXG2ggSYcsXECLgdDyDXmnwo0pi11CKg5stqaphOyc9uJAdB04t89/1O/w1cDnyilFU=');

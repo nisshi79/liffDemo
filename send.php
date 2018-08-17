@@ -20,7 +20,7 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('BRMhvyv25/1yd8O+annMk
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => 'a307966aa625d0e1bf90a078ef0af91a']);
 
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($demoMessage);
-$response = $bot->pushMessage('Ud93e55343ff0dfaa0bd51e382521e44d', $textMessageBuilder);
+$response = $bot->pushMessage($inputs['group_id'], $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 

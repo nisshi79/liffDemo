@@ -3,13 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIFF-LINE Bot Demo</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript">
-        // javascript
-        liff.init(function (data) {
-            // groupId を仕込む
-            $('#group_id').val(data.context.roomId);
-        });
-    </script>
+
 </head>
 
 <body>
@@ -39,7 +33,13 @@
             </ol>
             <input type="button" value="Add" class="members_list_add list_add_button"><!-- .(id)_add --><br>
         </div>
-
+        <script type="text/javascript">
+            // javascript
+            liff.init(function (data) {
+                // groupId を仕込む
+                $('#group_id').val(data.context.roomId);
+            });
+        </script>
         <br><br>
         <button type="submit" class="button">送信</button>
 
